@@ -13,4 +13,5 @@ Here is the highlights of what the script does
   - upgrade homebrew packages
 - `rustup upgrade`
   - updates rust to the latest version
+
  and so on...
