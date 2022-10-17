@@ -1,14 +1,16 @@
 GREEN='\033[0;32m'
+RESET='\033[0;0m'
 bold=$(tput bold)
-printf "${GREEN}    ___                         
+printf "${GREEN}
+   ___             _ _             
   |_  |           (_) |            
     | | __ _ _ __  _| |_ ___  _ __ 
-    | |/ _ | _ \| | __/ _ \| __|
+    | |/ _  | '_ \| | __/ _ \|  __|
 /\__/ / (_| | | | | | || (_) | |   
 \____/ \__,_|_| |_|_|\__\___/|_|   
-                                   
-                                   \n"
-printf "${bold}Now cleaning...\n"
+"                                   
+
+printf "${bold}Now cleaning...${RESET}\n\n"
 
 # Update & Upgrade then cleanup and repair brew packages
 brew update
@@ -22,4 +24,4 @@ gem cleanup
 # Upgrade rust
 rustup upgrade
 
-printf "${bold}The janitor has finished cleaning! \n"
+printf "${bold}${GREEN}The janitor has finished cleaning! ${RESET}\n\n"
