@@ -1,4 +1,14 @@
-echo 'now updating & cleaning up...'
+GREEN='\033[0;32m'
+bold=$(tput bold)
+printf "${GREEN}    ___                         
+  |_  |           (_) |            
+    | | __ _ _ __  _| |_ ___  _ __ 
+    | |/ _ | _ \| | __/ _ \| __|
+/\__/ / (_| | | | | | || (_) | |   
+\____/ \__,_|_| |_|_|\__\___/|_|   
+                                   
+                                   \n"
+printf "${bold}Now cleaning...\n"
 
 # Update & Upgrade then cleanup and repair brew packages
 brew update
