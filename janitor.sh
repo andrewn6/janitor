@@ -22,4 +22,4 @@ gem cleanup
 # Upgrade rust
 rustup upgrade
 
-echo 'Done.'
+printf "${bold}The janitor has finished cleaning! \n"
