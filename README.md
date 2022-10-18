@@ -15,3 +15,13 @@ Here is the highlights of what the script does
   - updates rust to the latest version
 
  and so on...
+
+## How to setup
+
+- Clone the repo:
+  - `git clone https://github.com/anddddrew/janitor`
+  
+- Create an alias in your .zshrc or .bashrc:
+  - `alias='/pathofrepogoeshere/janitor.sh'
+
+*Note: You may have to run `chmod +x janitor.sh` if you get `permission denied: ./janitor.sh`!*
