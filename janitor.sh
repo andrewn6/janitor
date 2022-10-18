@@ -1,5 +1,6 @@
 GREEN='\033[0;32m'
 bold=$(tput bold)
+
 printf "${GREEN}    ___                         
   |_  |           (_) |            
     | | __ _ _ __  _| |_ ___  _ __ 
@@ -15,6 +16,9 @@ brew update
 brew upgrade
 brew cleanup
 brew tap --repair
+
+# Update pip
+pip install --upgrade pip
 
 # Cleanup ruby gems
 gem cleanup
