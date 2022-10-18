@@ -24,4 +24,7 @@ gem cleanup
 # Upgrade rust
 rustup upgrade
 
+# Upgrade global pnpm deps
+pnpm update --global  
+
 printf "${bold}${GREEN}The janitor has finished cleaning! ${RESET}\n\n"
