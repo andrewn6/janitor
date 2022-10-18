@@ -22,6 +22,6 @@ Here is the highlights of what the script does
   - `git clone https://github.com/anddddrew/janitor`
   
 - Create an alias in your .zshrc or .bashrc:
-  - `alias='/pathofrepogoeshere/janitor.sh'
+  - `alias='/pathofrepogoeshere/janitor.sh'`
 
 *Note: You may have to run `chmod +x janitor.sh` if you get `permission denied: ./janitor.sh`!*
