@@ -29,6 +29,10 @@ gem cleanup
 rustup upgrade
 
 # Upgrade global pnpm deps
-pnpm update --global  
+pnpm update --global 
+
+# Flush DNS cache
+sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+
 
 printf "${bold}${GREEN}The janitor has finished cleaning! ${RESET}\n\n"
