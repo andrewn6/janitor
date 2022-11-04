@@ -34,5 +34,8 @@ pnpm update --global
 # Flush DNS cache
 sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
 
+# Update pip
+python3.10 -m pip install --upgrade pip
+
 
 printf "${bold}${GREEN}The janitor has finished cleaning! ${RESET}\n\n"
