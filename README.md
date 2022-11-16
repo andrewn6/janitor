@@ -40,3 +40,9 @@ example: `./janitor.sh --disable=dnrg`
   - `alias='/pathofrepogoeshere/janitor.sh'`
 
 *Note: You may have to run `chmod +x janitor.sh` if you get `permission denied: ./janitor.sh`!*
+
+## Thank you
+
+Big thanks to @PineappleRind for improving the script and making great modifications! 
+
+Make sure to follow his github he is a great programmer.
