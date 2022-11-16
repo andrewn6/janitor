@@ -1,41 +1,77 @@
 GREEN='\033[0;32m'
 RESET='\033[0;0m'
-bold=$(tput bold)
+BOLD=$(tput bold)
+arg=$1
 
 printf "${GREEN}
-   ___             _ _             
-  |_  |           (_) |            
-    | | __ _ _ __  _| |_ ___  _ __ 
+   ___             _ _
+  |_  |           (_) |
+    | | __ _ _ __  _| |_ ___  _ __
     | |/ _  | '_ \| | __/ _ \|  __|
-/\__/ / (_| | | | | | || (_) | |   
-\____/ \__,_|_| |_|_|\__\___/|_|   
-"                                   
+/\__/ / (_| | | | | | || (_) | |
+\____/ \__,_|_| |_|_|\__\___/|_|
+${RESET}"
 
-printf "${bold}Now cleaning...${RESET}\n\n"
+help() {
+    printf "
+  ${GREEN}${BOLD}Janitor Help${RESET}
+  --help (-h): prints this message
+  --disable: disable certain commands from running
+    b: disable brew update
+    d: disable DNS cache flush
+    g: disable gem cleanup
+    n: disable pnpm update
+    p: disable pip update
+    r: disable rust upgrade
+
+    example: ./janitor.sh --disable=dgnr\n"
+
+    exit
+}
+
+if [ $1 == "--help" ] || [ $1 == "-h" ]; then help
+fi
+
+printf "${BOLD}Now cleaning...${RESET}\n\n"
 
 # Update & Upgrade then cleanup and repair brew packages
-brew update
-brew upgrade
-brew cleanup
-brew tap --repair
+update_brew() {
+    brew update
+    brew upgrade
+    brew cleanup
+    brew tap --repair
+}
 
 # Update pip
-pip install --upgrade pip
+update_pip() {
+    python=$(ls -a /usr/bin | grep python | tail -1);
+    ($python -m pip install --upgrade pip)
+}
 
 # Cleanup ruby gems
-gem cleanup
+if [[ $arg != "--disable"*"g"* ]]; then
+    gem cleanup
+fi
 
 # Upgrade rust
-rustup upgrade
+if [[ $arg != "--disable"*"r"* ]]; then
+    rustup upgrade
+fi
 
 # Upgrade global pnpm deps
-pnpm update --global 
+if [[ $arg != "--disable"*"n"* ]]; then
+    pnpm update --global
+fi
 
 # Flush DNS cache
-sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+if [[ $arg != "--disable"*"d"* ]]; then
+    sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+fi
 
-# Update pip
-python3.10 -m pip install --upgrade pip
+if [[ $arg != "--disable"*"b"* ]]; then update_brew
+fi
 
+if [[ $arg != "--disable"*"p"* ]]; then update_pip
+fi
 
-printf "${bold}${GREEN}The janitor has finished cleaning! ${RESET}\n\n"
+printf "\n${BOLD}${GREEN}The janitor has finished cleaning! ${RESET}\n\n"

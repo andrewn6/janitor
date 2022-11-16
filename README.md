@@ -16,7 +16,22 @@ Here is the highlights of what the script does
 
  and so on...
 
-## How to setup
+## Options
+
+You can run the shell script with the following options:
+
+- `--help (-h)`: shows this help page
+- `--disable`: disable certain commands from running
+- - `b`: disable brew update
+- - `d`: disable DNS cache flush
+- - `g`: disable gem cleanup
+- - `n`: disable pnpm update
+- - `p`: disable pip update
+- - `r`: disable rust upgrade
+
+example: `./janitor.sh --disable=dnrg`
+
+## How to set up
 
 - Clone the repo:
   - `git clone https://github.com/anddddrew/janitor`
