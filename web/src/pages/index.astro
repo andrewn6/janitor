@@ -1,0 +1,37 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../config';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE}/>
+	</head>
+	<body>
+		<Header title={SITE_TITLE} />
+		<main>
+			<h1>👋 Hello</h1>
+			<p>
+			   This is a simple website for my tool <a href="https://github.com/anddddrew/janitor">janitor</a>.
+			</p>
+			<p>
+				You can find the steps for my tool on the github <a href="https://github.com/anddddrew/janitor">repository</a>
+			</p>
+			<p>Overview</p>
+			<ul>
+				<li>Updates brew packages </li>
+				<li>Updates rust </li>
+				<li>Updates python & pip </li>
+				<li>Updates global PNPM packages </li>
+				<li>And so on...</li>
+			</ul>
+			<p>
+				Enjoy! If you have an questions feel free to email me <a href="mailto:andrew@nijmeh.cloud">here</a>.
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
