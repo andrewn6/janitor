@@ -5,7 +5,6 @@ import '../styles/global.css';
 
 export interface Props {
 	title: string;
-	description: string;
 	image?: string;
 }
 
@@ -27,7 +26,6 @@ const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
 <meta property="og:type" content="website" />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
 
 <!-- Twitter -->
