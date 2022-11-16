@@ -29,7 +29,7 @@ help() {
     exit
 }
 
-if [ $1 == "--help" ] || [ $1 == "-h" ]; then help
+if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then help
 fi
 
 printf "${BOLD}Now cleaning...${RESET}\n\n"
@@ -66,12 +66,15 @@ fi
 # Flush DNS cache
 if [[ $arg != "--disable"*"d"* ]]; then
     sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+    echo "$GREEN The janitor has flushed the DNS cache! $RESET "
 fi
 
-if [[ $arg != "--disable"*"b"* ]]; then update_brew
+if [[ $arg != "--disable"*"b"* ]]; then 
+    update_brew
 fi
 
-if [[ $arg != "--disable"*"p"* ]]; then update_pip
+if [[ $arg != "--disable"*"p"* ]]; then 
+    update_pip
 fi
 
 printf "\n${BOLD}${GREEN}The janitor has finished cleaning! ${RESET}\n\n"
