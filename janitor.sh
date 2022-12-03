@@ -50,7 +50,7 @@ update_pip() {
 
 # Cleanup ruby gems
 if [[ $arg != "--disable"*"g"* ]]; then
-    gem cleanup
+    sudo gem cleanup
 fi
 
 # Upgrade rust
