@@ -45,4 +45,4 @@ example: `./janitor.sh --disable=dnrg`
 
 Big thanks to @PineappleRind for improving the script and making great modifications! 
 
-Make sure to follow his github he is a great programmer.
+Checkout his work [here](https://pineapplerind.xyz)
