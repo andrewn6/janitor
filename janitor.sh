@@ -23,6 +23,7 @@ help() {
     n: disable pnpm update
     p: disable pip update
     r: disable rust upgrade
+    n: disable nix update
 
     example: ./janitor.sh --disable=dgnr\n"
 
@@ -61,6 +62,11 @@ fi
 # Upgrade global pnpm deps
 if [[ $arg != "--disable"*"n"* ]]; then
     pnpm update --global
+fi
+
+# Upgrade nix
+if [[ $arg != "disable"*"n"* ]]; then
+   nix upgrade-nix
 fi
 
 # Flush DNS cache
