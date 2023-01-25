@@ -2,7 +2,7 @@
 
 ## What does this do?
 
-This is a script that I run here and there which cleans up my macbook, and updates packages and does other misc tasks.
+This is a script that I run here and there which cleans up my macbook, updates packages and does other misc tasks.
 
 ## Overview
 
@@ -45,4 +45,4 @@ example: `./janitor.sh --disable=dnrg`
 
 Big thanks to @PineappleRind for improving the script and making great modifications! 
 
-Checkout his work [here](https://pineapplerind.xyz)
+Check out his work [here](https://pineapplerind.xyz)
